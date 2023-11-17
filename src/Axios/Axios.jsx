@@ -5,7 +5,7 @@ export const loginAxios=async(data)=>{
   
 try {
     
- const login=await axios.post(`${import.meta.env.VITE_BackEND}/login`,data); 
+ const login=await axios.post(`${import.meta.env.VITE_BACKEND}/login`,data); 
  return login
 } 
 catch (error) {
@@ -24,7 +24,7 @@ catch (error) {
 
 export const registerAxios=async(data)=>{
   try {
-    const register=await axios.post(`${import.meta.env.VITE_BackEND}/register`,data); 
+    const register=await axios.post(`${import.meta.env.VITE_BACKEND}/register`,data); 
     return register;
 
 } catch (error) {
@@ -44,7 +44,7 @@ export const registerAxios=async(data)=>{
    export const callUsers=async()=>{
     try {
 
-    const res=await axios.get(`${import.meta.env.VITE_BackEND}/getusers`);
+    const res=await axios.get(`${import.meta.env.VITE_BACKEND}/getusers`);
     return res;
       
     } catch (error) {
@@ -62,7 +62,7 @@ export const registerAxios=async(data)=>{
     export const callSingleUsers=async(id)=>{
       try {
 
-      const res=await axios.get(`${import.meta.env.VITE_BackEND}/singlecontroller/${id}`);
+      const res=await axios.get(`${import.meta.env.VITE_BACKEND}/singlecontroller/${id}`);
       return res;
         
       } catch (error) {
@@ -81,7 +81,7 @@ export const registerAxios=async(data)=>{
     export const AddMemberData=async(data)=>{
       try {
   
-      const res=await axios.post(`${import.meta.env.VITE_BackEND}/addMember`,data);
+      const res=await axios.post(`${import.meta.env.VITE_BACKEND}/addMember`,data);
       return res;
         
       } catch (error) {
@@ -98,7 +98,7 @@ export const registerAxios=async(data)=>{
       export const GetMemberData=async(sender,reciver)=>{
         try {
     
-        const res=await axios.get(`${import.meta.env.VITE_BackEND}/getmember?sender=${sender}`);
+        const res=await axios.get(`${import.meta.env.VITE_BACKEND}/getmember?sender=${sender}`);
         return res;
           
         } catch (error) {
@@ -116,7 +116,7 @@ export const registerAxios=async(data)=>{
 
 export const AddMessage =async(data)=>{
   try {
-    const res=await axios.post(`${import.meta.env.VITE_BackEND}/addMessage`,data);
+    const res=await axios.post(`${import.meta.env.VITE_BACKEND}/addMessage`,data);
     return res;
   } catch (error) {
     if (error.response) {
@@ -129,7 +129,7 @@ export const AddMessage =async(data)=>{
 
 export const GetMessage=async(id)=>{
   try {
-    const res=await axios.get(`${import.meta.env.VITE_BackEND}/getmessage?id=${id}`);
+    const res=await axios.get(`${import.meta.env.VITE_BACKEND}/getmessage?id=${id}`);
     return res;
   } catch (error) {
     if (error.response) {
