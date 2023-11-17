@@ -44,6 +44,7 @@ useEffect(()=>{
 
 const dispatch=useDispatch();
 
+/* ------------------------------------------- */
 const sendMessage=async()=>{
 const res=await AddMessage(inputVal);
 if(res.data.success==true){
@@ -53,15 +54,29 @@ if(res.data.success==true){
  }) 
 }
 
+
 socket.on("chat",(newMessage)=>{
  dispatch(addmessage(newMessage))
 }) 
 
 }
+/* -------------------------------- */
+
+const setval=(e)=>{
+
+  setinputVal({...inputVal,message:e.target.value})
+}
+
+const handle=(e)=>{
+
+if(e.key=='Enter'){
+  sendMessage()
+}
+}
   
   return (
     <div className='bg-white h-[4rem] flex px-4'>
-    <input type="text" placeholder='Type a message' value={inputVal.message} onChange={(e)=>setinputVal({...inputVal,message:e.target.value})} className='w-full h-full outline-none' />
+    <input type="text" placeholder='Type a message' value={inputVal.message} onKeyUp={handle} onChange={setval} className='w-full h-full outline-none' />
     
     <div onClick={()=>sendMessage()} className='grid place-items-center '>
     <IconButton>

@@ -21,7 +21,7 @@ import { addAllUsers } from "./components/Feature/ThemeSlice"
 console.log(`${import.meta.env.VITE_BackEND}`)
 
 
-export  const socket = io.connect('http://localhost:8000');
+export  const socket = io.connect(`${import.meta.env.VITE_BACKEND}`);
 
 const App=()=>{
 
